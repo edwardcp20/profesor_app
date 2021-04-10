@@ -37,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen>
 
               SizedBox(height: 1.0,),
               Text(
-                "Login as a Driver",
+                "Iniciar sesion como Profesor",
                 style: TextStyle(fontSize: 24.0, fontFamily: "Brand Bold"),
                 textAlign: TextAlign.center,
               ),
@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen>
                       controller: passwordTextEditingController,
                       obscureText: true,
                       decoration: InputDecoration(
-                        labelText: "Password",
+                        labelText: "Contraseña",
                         labelStyle: TextStyle(
                           fontSize: 14.0,
                         ),
@@ -83,13 +83,13 @@ class _LoginScreenState extends State<LoginScreen>
 
                     SizedBox(height: 20.0,),
                     RaisedButton(
-                      color: Colors.yellow,
+                      color: Color(0xFF26BAA5),
                       textColor: Colors.white,
                       child: Container(
                         height: 50.0,
                         child: Center(
                           child: Text(
-                            "Login",
+                            "Iniciar Sesion",
                             style: TextStyle(fontSize: 18.0, fontFamily: "Brand Bold"),
                           ),
                         ),
@@ -124,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen>
                   Navigator.pushNamedAndRemoveUntil(context, RegisterationScreen.idScreen, (route) => false);
                 },
                 child: Text(
-                  "Do not have an Account? Register Here",
+                  "¿No tienes cuenta? Registrate Aqui",
                 ),
               ),
             ],

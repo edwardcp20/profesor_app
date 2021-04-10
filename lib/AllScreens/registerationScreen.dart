@@ -32,7 +32,7 @@ class RegisterationScreen extends StatelessWidget
 
               SizedBox(height: 1.0,),
               Text(
-                "Register as a Driver",
+                "Registrate como Profesor",
                 style: TextStyle(fontSize: 24.0, fontFamily: "Brand Bold"),
                 textAlign: TextAlign.center,
               ),
@@ -47,7 +47,7 @@ class RegisterationScreen extends StatelessWidget
                       controller: nameTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
-                        labelText: "Name",
+                        labelText: "Nombre",
                         labelStyle: TextStyle(
                           fontSize: 14.0,
                         ),
@@ -81,7 +81,7 @@ class RegisterationScreen extends StatelessWidget
                       controller: phoneTextEditingController,
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
-                        labelText: "Phone",
+                        labelText: "Celular",
                         labelStyle: TextStyle(
                           fontSize: 14.0,
                         ),
@@ -98,7 +98,7 @@ class RegisterationScreen extends StatelessWidget
                       controller: passwordTextEditingController,
                       obscureText: true,
                       decoration: InputDecoration(
-                        labelText: "Password",
+                        labelText: "contraseña",
                         labelStyle: TextStyle(
                           fontSize: 14.0,
                         ),
@@ -112,13 +112,13 @@ class RegisterationScreen extends StatelessWidget
 
                     SizedBox(height: 20.0,),
                     RaisedButton(
-                      color: Colors.yellow,
+                      color: Color(0xFF26BAA5),
                       textColor: Colors.white,
                       child: Container(
                         height: 50.0,
                         child: Center(
                           child: Text(
-                            "Create Account",
+                            "Crear Cuenta",
                             style: TextStyle(fontSize: 18.0, fontFamily: "Brand Bold"),
                           ),
                         ),
@@ -161,7 +161,7 @@ class RegisterationScreen extends StatelessWidget
                   Navigator.pushNamedAndRemoveUntil(context, LoginScreen.idScreen, (route) => false);
                 },
                 child: Text(
-                  "Already have an Account? Login Here",
+                  "¿Tienes cuenta? Inicia Sesion aqui",
                 ),
               ),
             ],
