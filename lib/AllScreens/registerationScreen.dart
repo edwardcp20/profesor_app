@@ -1,7 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:profesor_app/AllScreens/carInfoScreen.dart';
 import 'package:profesor_app/AllScreens/loginScreen.dart';
 import 'package:profesor_app/AllWidgets/progressDialog.dart';
+import 'package:profesor_app/configMaps.dart';
+import 'package:profesor_app/main.dart';
 
 
 class RegisterationScreen extends StatelessWidget
@@ -172,7 +176,7 @@ class RegisterationScreen extends StatelessWidget
   }
 
 
-  //final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   void registerNewUser(BuildContext context) async
   {
@@ -185,16 +189,16 @@ class RegisterationScreen extends StatelessWidget
         }
     );
 
-    /*final User firebaseUser = (await _firebaseAuth
+    final User firebaseUser = (await _firebaseAuth
         .createUserWithEmailAndPassword(
         email: emailTextEditingController.text,
         password: passwordTextEditingController.text
     ).catchError((errMsg){
       Navigator.pop(context);
       displayToastMessage("Error: " + errMsg.toString(), context);
-    })).user;*/
+    })).user;
 
-    /*if(firebaseUser != null) //user created
+    if(firebaseUser != null) //user created
     {
       //save user info to database
       Map userDataMap = {
@@ -204,10 +208,11 @@ class RegisterationScreen extends StatelessWidget
       };
 
       driversRef.child(firebaseUser.uid).set(userDataMap);
+      
 
       currentfirebaseUser = firebaseUser;
 
-      displayToastMessage("Congratulations, your account has been created.", context);
+      displayToastMessage("Tu cuenta ha sido creada.", context);
 
       Navigator.pushNamed(context, CarInfoScreen.idScreen);
     }
@@ -216,7 +221,7 @@ class RegisterationScreen extends StatelessWidget
       Navigator.pop(context);
       //error occured - display error msg
       displayToastMessage("New user account has not been Created.", context);
-    }*/
+    }
 
   }
 }
