@@ -1,3 +1,7 @@
+import 'package:profesor_app/tabsPages/earningsTabPage.dart';
+import 'package:profesor_app/tabsPages/homeTabPage.dart';
+import 'package:profesor_app/tabsPages/profileTabPage.dart';
+import 'package:profesor_app/tabsPages/ratingTabPage.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget
@@ -45,10 +49,10 @@ class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateM
         physics: NeverScrollableScrollPhysics(),
         controller: tabController,
         children: [
-          /*HomeTabPage(),
+          HomeTabPage(),
           EarningsTabPage(),
           RatingTabPage(),
-          ProfileTabPage(),*/
+          ProfileTabPage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -56,22 +60,22 @@ class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateM
 
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: "Home",
+            label: "Inicio",
           ),
 
           BottomNavigationBarItem(
             icon: Icon(Icons.credit_card),
-            label: "Earnings",
+            label: "Ganancias",
           ),
 
           BottomNavigationBarItem(
             icon: Icon(Icons.star),
-            label: "Ratings",
+            label: "Calificaciones",
           ),
 
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: "Account",
+            label: "Cuenta",
           ),
 
         ],
