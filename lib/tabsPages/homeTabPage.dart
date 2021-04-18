@@ -28,7 +28,7 @@ class _HomeTabPageState extends State<HomeTabPage> {
 
   var geoLocator = Geolocator();
 
-  String driverStatusText = "Offline Now - Go Online ";
+  String driverStatusText = "Desconectado - Conectarse ";
 
   Color driverStatusColor = Colors.black;
 
@@ -189,11 +189,11 @@ class _HomeTabPageState extends State<HomeTabPage> {
 
                       setState(() {
                         driverStatusColor = Colors.green;
-                        driverStatusText = "Online Now ";
+                        driverStatusText = "Conectado ";
                         isDriverAvailable = true;
                       });
 
-                      displayToastMessage("you are Online Now.", context);
+                      displayToastMessage("usted esta conectado.", context);
                     }
                     else
                     {
@@ -201,11 +201,11 @@ class _HomeTabPageState extends State<HomeTabPage> {
 
                       setState(() {
                         driverStatusColor = Colors.black;
-                        driverStatusText = "Offline Now - Go Online ";
+                        driverStatusText = "Desconectado - Conectarse ";
                         isDriverAvailable = false;
                       });
 
-                      displayToastMessage("you are Offline Now.", context);
+                      displayToastMessage("usted esta desconectado.", context);
                     }
                   },
                   color: driverStatusColor,

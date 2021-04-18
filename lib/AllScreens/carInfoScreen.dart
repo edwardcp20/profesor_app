@@ -30,7 +30,7 @@ class _CarInfoScreenState extends State<CarInfoScreen> {
           child: Column(
             children: [
               SizedBox(height: 22.0,),
-              Image.asset("images/logo.png", width: 390.0, height: 250.0,),
+              //Image.asset("images/logo.png", width: 390.0, height: 250.0,),
               Padding(
                 padding: EdgeInsets.fromLTRB(22.0, 22.0, 22.0, 32.0),
                 child: Column(
@@ -103,7 +103,7 @@ class _CarInfoScreenState extends State<CarInfoScreen> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("NEXT", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),),
+                              Text("Siguiente", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),),
                               Icon(Icons.arrow_forward, color: Colors.white, size: 26.0,),
                             ],
                           ),
@@ -127,12 +127,12 @@ class _CarInfoScreenState extends State<CarInfoScreen> {
 
     Map carInfoMap =
     {
-      "car_color": carColorTextEditingController.text,
-      "car_number": carNumberTextEditingController.text,
-      "car_model": carModelTextEditingController.text,
+      "dni": carColorTextEditingController.text,
+      "profession": carNumberTextEditingController.text,
+      "subjects": carModelTextEditingController.text,
     };
 
-    driversRef.child(userId).child("car_details").set(carInfoMap);
+    driversRef.child(userId).child("details").set(carInfoMap);
 
     Navigator.pushNamedAndRemoveUntil(context, MainScreen.idScreen, (route) => false);
   }
