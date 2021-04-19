@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter_geofire/flutter_geofire.dart';
 import 'package:profesor_app/AllScreens/registerationScreen.dart';
 import 'package:profesor_app/Assistants/assistantMethods.dart';
 import 'package:profesor_app/Models/drivers.dart';
@@ -28,7 +29,7 @@ class _HomeTabPageState extends State<HomeTabPage> {
 
   var geoLocator = Geolocator();
 
-  String driverStatusText = "Desconectado - Conectarse ";
+  String driverStatusText = "Desconectado";
 
   Color driverStatusColor = Colors.black;
 
@@ -201,7 +202,7 @@ class _HomeTabPageState extends State<HomeTabPage> {
 
                       setState(() {
                         driverStatusColor = Colors.black;
-                        driverStatusText = "Desconectado - Conectarse ";
+                        driverStatusText = "Desconectado";
                         isDriverAvailable = false;
                       });
 
@@ -234,13 +235,13 @@ class _HomeTabPageState extends State<HomeTabPage> {
     Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
     currentPosition = position;
 
-    /*Geofire.initialize("availableDrivers");
+    Geofire.initialize("availableProfessors");
     Geofire.setLocation(currentfirebaseUser.uid, currentPosition.latitude, currentPosition.longitude);
 
     rideRequestRef.set("searching");
     rideRequestRef.onValue.listen((event) {
 
-    });*/
+    });
   }
 
   void getLocationLiveUpdates()

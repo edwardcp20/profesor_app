@@ -8,6 +8,7 @@ import 'package:profesor_app/AllScreens/loginScreen.dart';
 import 'package:profesor_app/AllScreens/mainscreen.dart';
 import 'package:profesor_app/AllScreens/registerationScreen.dart';
 import 'package:profesor_app/DataHandler/appData.dart';
+import 'package:profesor_app/configMaps.dart';
 import 'package:provider/provider.dart';
 
 
@@ -24,8 +25,8 @@ void main() async
 
 DatabaseReference usersRef = FirebaseDatabase.instance.reference().child("users");
 DatabaseReference driversRef = FirebaseDatabase.instance.reference().child("profesor");
-/*DatabaseReference newRequestsRef = FirebaseDatabase.instance.reference().child("Ride Requests");
-DatabaseReference rideRequestRef = FirebaseDatabase.instance.reference().child("drivers").child(currentfirebaseUser.uid).child("newRide");*/
+//DatabaseReference newRequestsRef = FirebaseDatabase.instance.reference().child("Ride Requests");
+DatabaseReference rideRequestRef = FirebaseDatabase.instance.reference().child("profesor").child(currentfirebaseUser.uid).child("newRide");
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
