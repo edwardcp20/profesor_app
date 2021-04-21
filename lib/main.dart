@@ -18,7 +18,7 @@ void main() async
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  //currentfirebaseUser = FirebaseAuth.instance.currentUser;
+  currentfirebaseUser = FirebaseAuth.instance.currentUser;
 
   runApp(MyApp());
 }

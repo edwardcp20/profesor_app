@@ -238,7 +238,7 @@ class _HomeTabPageState extends State<HomeTabPage> {
     Geofire.initialize("availableProfessors");
     Geofire.setLocation(currentfirebaseUser.uid, currentPosition.latitude, currentPosition.longitude);
 
-    rideRequestRef.set("searching");
+    //rideRequestRef.set("searching");
     rideRequestRef.onValue.listen((event) {
 
     });
@@ -250,7 +250,7 @@ class _HomeTabPageState extends State<HomeTabPage> {
       currentPosition = position;
       if(isDriverAvailable == true)
       {
-        //Geofire.setLocation(currentfirebaseUser.uid, position.latitude, position.longitude);
+        Geofire.setLocation(currentfirebaseUser.uid, position.latitude, position.longitude);
       }
       LatLng latLng = LatLng(position.latitude, position.longitude);
       newGoogleMapController.animateCamera(CameraUpdate.newLatLng(latLng));
@@ -259,9 +259,9 @@ class _HomeTabPageState extends State<HomeTabPage> {
 
   void makeDriverOfflineNow()
   {
-    /*Geofire.removeLocation(currentfirebaseUser.uid);
+    Geofire.removeLocation(currentfirebaseUser.uid);
     rideRequestRef.onDisconnect();
     rideRequestRef.remove();
-    rideRequestRef= null;*/
+    rideRequestRef= null;
   }
 }
