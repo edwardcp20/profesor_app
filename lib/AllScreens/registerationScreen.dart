@@ -51,7 +51,7 @@ class RegisterationScreen extends StatelessWidget
                       controller: nameTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
-                        labelText: "Nombre",
+                        labelText: "Nombre Completo",
                         labelStyle: TextStyle(
                           fontSize: 14.0,
                         ),

@@ -1,6 +1,12 @@
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:profesor_app/AllScreens/mainscreen.dart';
 import 'package:profesor_app/AllScreens/registerationScreen.dart';
 import 'package:profesor_app/AllWidgets/progressDialog.dart';
+import 'package:profesor_app/configMaps.dart';
+import 'package:profesor_app/main.dart';
 
 
 class LoginScreen extends StatefulWidget
@@ -134,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  //final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   void loginAndAuthenticateUser(BuildContext context) async
   {
@@ -143,41 +149,41 @@ class _LoginScreenState extends State<LoginScreen>
       barrierDismissible: false,
       builder: (BuildContext context)
       {
-        return ProgressDialog(message: "Authenticating, Please wait...",);
+        return ProgressDialog(message: "Autenticando, por favor espere ...",);
       }
     );
 
-    /*final User firebaseUser = (await _firebaseAuth
+    final User firebaseUser = (await _firebaseAuth
         .signInWithEmailAndPassword(
         email: emailTextEditingController.text,
         password: passwordTextEditingController.text
     ).catchError((errMsg){
       Navigator.pop(context);
       displayToastMessage("Error: " + errMsg.toString(), context);
-    })).user;*/
+    })).user;
 
-    /*if(firebaseUser != null)
+    if(firebaseUser != null)
     {
       driversRef.child(firebaseUser.uid).once().then((DataSnapshot snap){
         if(snap.value != null)
         {
           currentfirebaseUser = firebaseUser;
           Navigator.pushNamedAndRemoveUntil(context, MainScreen.idScreen, (route) => false);
-          displayToastMessage("you are logged-in now.", context);
+          displayToastMessage("usted ha iniciado sesión ahora.", context);
         }
         else
         {
           Navigator.pop(context);
           _firebaseAuth.signOut();
-          displayToastMessage("No record exists for this user. Please create new account.", context);
+          displayToastMessage("No existe ningún registro para este usuario. Por favor cree una nueva cuenta.", context);
         }
       });
     }
     else
     {
       Navigator.pop(context);
-      displayToastMessage("Error Occured, can not be Signed-in.", context);
-    }*/
+      displayToastMessage("Error ocurrido, no se puede iniciar sesión.", context);
+    }
 
   }
 }
